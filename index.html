@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sentient Productions</title>
+
+  <meta
+    name="description"
+    content="Sentient Productions builds intentional identity, digital presence, narrative strategy, and long-term career systems for electronic artists."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash" aria-label="Sentient Productions intro">
+    <iframe
+      src="sentient_sp_logo_animated.html"
+      title="Sentient Productions Logo Animation"
+      frameborder="0"
+    ></iframe>
+  </div>
+
+  <!-- WEBSITE -->
+  <div id="site">
+
+    <header class="site-header">
+
+      <a href="#top" class="brand" aria-label="Sentient Productions home">
+
+        <img
+          src="assets/sentient-logo.svg"
+          alt=""
+          class="brand-logo"
+          aria-hidden="true"
+        />
+
+        <span class="brand-text">
+          <span class="brand-name">SENTIENT</span>
+          <span class="brand-subtitle">productions</span>
+        </span>
+
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#approach">Approach</a>
+        <a href="#services">Services</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#frameworks">Frameworks</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+    </header>
+
+    <main id="top">
+
+      <section class="hero">
+
+        <div class="hero-kicker">
+          ARTIST SYSTEMS · ELECTRONIC MUSIC · DETROIT
+        </div>
+
+        <h1>
+          We make electronic artists easier to discover, easier to understand, and harder to forget.
+        </h1>
+
+        <p class="hero-copy">
+          Sentient Productions builds intentional identity, digital presence, narrative strategy, and long-term career systems for electronic artists.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="button primary">Start a Conversation</a>
+          <a href="#frameworks" class="button ghost">Explore Frameworks</a>
+        </div>
+
+      </section>
+
+      <section class="statement">
+        <div class="rule"></div>
+        <p>We do not make noise louder. We clarify signal.</p>
+      </section>
+
+      <section id="approach" class="section split">
+
+        <div>
+          <div class="section-label">Approach</div>
+          <h2>Strategy before visibility.</h2>
+        </div>
+
+        <div>
+          <p>
+            Most artists do not need more random content. They need a stronger system.
+          </p>
+
+          <p>
+            Identity. Digital presence. Narrative. Booking assets. Websites. EPKs. Content strategy. Long-term career architecture.
+          </p>
+
+          <p>
+            We build the system so every release, every performance, every collaboration, and every interaction reinforces the same signal.
+          </p>
+        </div>
+
+      </section>
+
+      <section id="services" class="section">
+
+        <div class="section-label">Services</div>
+
+        <div class="cards">
+
+          <article class="card">
+            <h3>Signal Foundation</h3>
+            <p>Positioning, story, bio, links, and a focused EPK or one-sheet for booking readiness.</p>
+          </article>
+
+          <article class="card">
+            <h3>Signal System</h3>
+            <p>Website, visual language, content direction, EPK, mailing list, and artist toolkit.</p>
+          </article>
+
+          <article class="card">
+            <h3>Signal Maintenance</h3>
+            <p>Monthly updates, content planning, newsletter support, web maintenance, and quarterly review.</p>
+          </article>
+
+          <article class="card">
+            <h3>Artist Architecture</h3>
+            <p>Selective long-term partnership for artists ready to build cultural gravity beyond the club.</p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <section id="case-studies" class="section split">
+
+        <div>
+          <div class="section-label">Current Transmission</div>
+          <h2>Augustus Williams</h2>
+        </div>
+
+        <div>
+          <p>
+            Artist strategy, visual direction, EPK development, session indexing, digital presence, and long-range positioning for Detroit techno artist Augustus Williams.
+          </p>
+
+          <a class="text-link" href="#contact">Ask about the case study</a>
+        </div>
+
+      </section>
+
+      <section id="frameworks" class="section split">
+
+        <div>
+          <div class="section-label">Frameworks</div>
+          <h2>Ideas worth building careers on.</h2>
+        </div>
+
+        <div>
+          <p>
+            Frameworks is where Sentient publishes the thinking behind the work. These essays, case studies, and practical models explore artist positioning, booking readiness, identity systems, digital presence, release strategy, and long-term career development.
+          </p>
+        </div>
+
+      </section>
+
+      <section id="contact" class="section contact">
+
+        <div class="section-label">Contact</div>
+
+        <h2>Build the signal.</h2>
+
+        <p>
+          For artist strategy, EPKs, websites, festival support, or creative direction:
+        </p>
+
+        <a href="mailto:jody@sentientproductions.com" class="email">
+          jody@sentientproductions.com
+        </a>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <span>SENTIENT PRODUCTIONS</span>
+      <span>DETROIT</span>
+    </footer>
+
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("splash").classList.add("hide");
+        document.getElementById("site").classList.add("show");
+      }, 3300);
+    });
+  </script>
+
+</body>
+
+</html>
