@@ -12,6 +12,16 @@
     content="Sentient Productions builds intentional identity, digital presence, narrative strategy, and long-term career systems for electronic artists."
   />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E24GC8N0BZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-E24GC8N0BZ');
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
@@ -25,7 +35,6 @@
 
 <body>
 
-  <!-- SPLASH SCREEN -->
   <div id="splash" aria-label="Sentient Productions intro">
     <iframe
       src="sentient_sp_logo_animated.html"
@@ -34,13 +43,11 @@
     ></iframe>
   </div>
 
-  <!-- WEBSITE -->
   <div id="site">
 
     <header class="site-header">
 
       <a href="#top" class="brand" aria-label="Sentient Productions home">
-
         <img
           src="assets/sentient-logo.svg"
           alt=""
@@ -52,13 +59,12 @@
           <span class="brand-name">SENTIENT</span>
           <span class="brand-subtitle">productions</span>
         </span>
-
       </a>
 
       <nav class="nav" aria-label="Main navigation">
         <a href="#approach">Approach</a>
         <a href="#services">Services</a>
-        <a href="#case-studies">Case Studies</a>
+        <a href="#artists">Artists</a>
         <a href="#frameworks">Frameworks</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -146,19 +152,41 @@
 
       </section>
 
-      <section id="case-studies" class="section split">
+      <section id="artists" class="section split">
 
         <div>
-          <div class="section-label">Current Transmission</div>
+          <div class="section-label">Artists</div>
           <h2>Augustus Williams</h2>
         </div>
 
         <div>
+          <p class="status-label">CURRENT TRANSMISSION</p>
+
           <p>
-            Artist strategy, visual direction, EPK development, session indexing, digital presence, and long-range positioning for Detroit techno artist Augustus Williams.
+            Sentient partnered with Augustus Williams to build a complete artist system, including brand identity, website, EPK, visual direction, narrative strategy, and long-term digital infrastructure. The goal was not simply to promote music. It was to create a coherent platform capable of supporting an enduring career.
           </p>
 
-          <a class="text-link" href="#contact">Ask about the case study</a>
+          <div class="link-stack">
+            <a
+              class="text-link"
+              href="https://augustuswilliamsmusic.com"
+              target="_blank"
+              rel="noopener noreferrer">
+              Visit Artist Website →
+            </a>
+
+            <a
+              class="text-link"
+              href="https://drive.google.com/file/d/1PTuuCgoAFQQx0hly1zZVLJQm3HxgarEx/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer">
+              View Electronic Press Kit →
+            </a>
+
+            <a class="text-link muted-link" href="#contact">
+              Read Project Story → Coming Soon
+            </a>
+          </div>
         </div>
 
       </section>
