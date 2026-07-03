@@ -382,3 +382,32 @@ h2 {
     height: min(86vh, 380px);
   }
 }
+/* ===========================
+   Artist Section
+=========================== */
+
+.status-label {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: var(--red);
+  font-size: .72rem;
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.link-stack {
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+  margin-top: 2rem;
+}
+
+.muted-link {
+  opacity: .55;
+  transition: opacity .25s ease;
+}
+
+.muted-link:hover {
+  opacity: .9;
+}
