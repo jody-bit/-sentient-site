@@ -1629,44 +1629,45 @@ body.intro-active {
   }
 }
 /* =========================================================
-   HOMEPAGE HERO: CENTERED + RESPONSIVE
+   HOMEPAGE HERO: CENTERED, FLUID, FULL-WIDTH
    ========================================================= */
 
 .home-hero-grid {
-  grid-template-columns: minmax(0, 1fr);
-  justify-items: center;
-  align-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: clamp(1.5rem, 3vw, 2.5rem);
-  min-height: clamp(31rem, 62vh, 43rem);
+  min-height: clamp(31rem, 68vh, 48rem);
+  padding-top: clamp(4rem, 7vw, 7rem);
+  padding-bottom: clamp(4rem, 7vw, 7rem);
   text-align: center;
 }
 
 .home-hero-grid > div:first-child {
-  display: grid;
-  justify-items: center;
-  width: min(100%, 75rem);
+  width: 100%;
 }
 
 .home-hero h1 {
-    width: min(100%, 900px);
-    margin: 0 auto 2rem;
-    font-size: clamp(3rem, 7.4vw, 7.6rem);
-    line-height: 0.92;
-    letter-spacing: -0.06em;
+  width: min(92vw, 1400px);
+  max-width: none;
+  margin: 0 auto;
+  font-size: clamp(3rem, 7vw, 7.5rem);
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  text-wrap: balance;
 }
 
 .home-hero-aside {
-  width: min(100%, 46rem);
+  width: min(92vw, 52rem);
   max-width: none;
   margin-inline: auto;
 }
 
 .home-hero-aside p {
-  width: 100%;
-  max-width: 46rem;
   margin-inline: auto;
   font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.7;
 }
 
 .home-actions {
@@ -1683,12 +1684,13 @@ body.intro-active {
   }
 
   .home-hero h1 {
-    max-width: 11ch;
+    width: min(94vw, 900px);
     font-size: clamp(3.4rem, 11vw, 6rem);
+    line-height: 0.94;
   }
 
   .home-hero-aside {
-    width: min(100%, 38rem);
+    width: min(92vw, 38rem);
   }
 }
 
@@ -1700,14 +1702,13 @@ body.intro-active {
   }
 
   .home-hero h1 {
-    max-width: 100%;
+    width: 100%;
     font-size: clamp(2.75rem, 13vw, 4.4rem);
     line-height: 0.96;
   }
 
-  .home-hero-aside p {
-    font-size: 1rem;
-    line-height: 1.65;
+  .home-hero-aside {
+    width: 100%;
   }
 
   .home-actions {
@@ -1716,11 +1717,5 @@ body.intro-active {
 
   .home-actions .button {
     width: 100%;
-  }
-}
-
-@media (max-width: 380px) {
-  .home-hero h1 {
-    font-size: clamp(2.45rem, 12.5vw, 3.25rem);
   }
 }
