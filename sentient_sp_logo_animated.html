@@ -1,113 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Sentient SP — Animated Logo</title>
-<style>
-  html, body {
-    margin: 0;
-    height: 100%;
-    background: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sentient Productions Logo Animation</title>
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #000;
+    }
 
-  .stage {
-    position: relative;
-    width: min(70vh, 90vw);
-    aspect-ratio: 1000 / 1400;
-  }
+    body {
+      display: grid;
+      place-items: center;
+    }
 
-  svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
+    .stage {
+      width: min(70vh, 82vw);
+      aspect-ratio: 1000 / 1400;
+    }
 
-  .stroke-path {
-    fill: none;
-    stroke: #ffffff;
-    stroke-linecap: square;
-    stroke-dasharray: 1 1;
-    stroke-dashoffset: 1;
-    animation: draw 1.4s cubic-bezier(.65,0,.35,1) forwards;
-  }
+    svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
 
-  /* staggered draw-in, following the natural build of the mark */
-  #path1 { stroke-width: 28; animation-delay: 0.0s; }
-  #path2 { stroke-width: 22.5; animation-delay: 0.55s; }
-  #path3 { stroke-width: 28; animation-delay: 0.95s; }
-  #path5 { stroke-width: 28; animation-delay: 1.55s; }
-  #path4 { stroke-width: 28; animation-delay: 1.85s; }
+    .stroke-path {
+      fill: none;
+      stroke: #fff;
+      stroke-linecap: square;
+      stroke-dasharray: 1 1;
+      stroke-dashoffset: 1;
+      animation: draw 1.4s cubic-bezier(.65, 0, .35, 1) forwards;
+    }
 
-  @keyframes draw {
-    to { stroke-dashoffset: 0; }
-  }
+    #path1 { stroke-width: 28; animation-delay: 0s; }
+    #path2 { stroke-width: 22.5; animation-delay: .55s; }
+    #path3 { stroke-width: 28; animation-delay: .95s; }
+    #path5 { stroke-width: 28; animation-delay: 1.55s; }
+    #path4 { stroke-width: 28; animation-delay: 1.85s; }
 
-  /* gentle ambient glow pulse once the mark is fully drawn */
-  .glow-group {
-    animation: pulse 4s ease-in-out 2.6s infinite;
-  }
+    .glow-group {
+      animation: pulse 4s ease-in-out 2.6s infinite;
+    }
 
-  @keyframes pulse {
-    0%, 100% { filter: drop-shadow(0 0 0px rgba(255,255,255,0)); }
-    50% { filter: drop-shadow(0 0 14px rgba(255,255,255,0.55)); }
-  }
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
 
-  .replay {
-    position: absolute;
-    bottom: -48px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.35);
-    color: rgba(255,255,255,0.7);
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 8px 18px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  .replay:hover {
-    border-color: #fff;
-    color: #fff;
-  }
-</style>
+    @keyframes pulse {
+      0%,
+      100% { filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0)); }
+      50% { filter: drop-shadow(0 0 14px rgba(255, 255, 255, .55)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .stroke-path {
+        stroke-dashoffset: 0;
+        animation: none;
+      }
+
+      .glow-group {
+        animation: none;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<div class="stage">
-  <svg viewBox="0 0 1000 1400" xmlns="http://www.w3.org/2000/svg">
-    <rect width="1000" height="1400" fill="#000000"/>
-    <g class="glow-group" fill="none" stroke="white" stroke-linecap="square">
-      <path id="path1" class="stroke-path" pathLength="1"
-        d="M 862.11888,293.37748 420,290 c -66.27228,-0.50627 -119.99995,53.72583 -119.99995,120 0,66.27417 53.72574,120 119.99995,120 h 260.4901" />
-      <path id="path2" class="stroke-path" pathLength="1"
-        d="M 310.13243,678.98019 660.79458,903.50991" />
-      <path id="path3" class="stroke-path" pathLength="1"
-        d="M 481.69552,720 H 736 c 66.27421,0 119.99995,53.72583 119.99995,120 0,66.27417 -53.72574,120 -119.99995,120 H 508.45047" />
-      <path id="path4" class="stroke-path" pathLength="1"
-        d="m 488,960 v 280" />
-      <path id="path5" class="stroke-path" pathLength="1"
-        d="m 766,642 c 36.66667,10 71,22.66667 91,46" />
-    </g>
-  </svg>
-  <button class="replay" onclick="replay()">Replay</button>
-</div>
-
-<script>
-function replay() {
-  document.querySelectorAll('.stroke-path').forEach(p => {
-    p.style.animation = 'none';
-    void p.offsetWidth; // force reflow
-    p.style.animation = null;
-  });
-}
-</script>
-
+  <div class="stage">
+    <svg viewBox="0 0 1000 1400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sentient Productions symbol">
+      <rect width="1000" height="1400" fill="#000" />
+      <g class="glow-group" fill="none" stroke="#fff" stroke-linecap="square">
+        <path id="path1" class="stroke-path" pathLength="1"
+          d="M 862.11888,293.37748 420,290 c -66.27228,-0.50627 -119.99995,53.72583 -119.99995,120 0,66.27417 53.72574,120 119.99995,120 h 260.4901" />
+        <path id="path2" class="stroke-path" pathLength="1"
+          d="M 310.13243,678.98019 660.79458,903.50991" />
+        <path id="path3" class="stroke-path" pathLength="1"
+          d="M 481.69552,720 H 736 c 66.27421,0 119.99995,53.72583 119.99995,120 0,66.27417 -53.72574,120 -119.99995,120 H 508.45047" />
+        <path id="path4" class="stroke-path" pathLength="1"
+          d="m 488,960 v 280" />
+        <path id="path5" class="stroke-path" pathLength="1"
+          d="m 766,642 c 36.66667,10 71,22.66667 91,46" />
+      </g>
+    </svg>
+  </div>
 </body>
 </html>

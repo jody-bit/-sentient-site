@@ -22,3 +22,10 @@ git commit -m "Apply responsive design system across Sentient site"
 git push
 
 Then wait for Vercel to show Ready and hard-refresh the live site.
+
+OPENING ANIMATION RESTORED
+- sentient_sp_logo_animated.html is included at the repository root.
+- The intro plays on the homepage for 3.3 seconds.
+- Visitors can skip it.
+- Reduced-motion users bypass it automatically.
+- Interior pages do not replay the intro.

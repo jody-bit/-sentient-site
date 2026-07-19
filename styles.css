@@ -1556,3 +1556,76 @@ button:focus-visible {
     font-size: clamp(2.65rem, 12vw, 3.8rem);
   }
 }
+
+/* OPENING ANIMATION */
+
+body.intro-active {
+  overflow: hidden;
+}
+
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #000;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 800ms ease,
+    visibility 800ms ease;
+}
+
+#splash.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+#splash iframe {
+  width: min(68vh, 78vw);
+  height: min(88vh, 88vw);
+  border: 0;
+  background: #000;
+}
+
+#skip-intro {
+  position: absolute;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  z-index: 2;
+  padding: .7rem .85rem;
+  color: rgba(245, 245, 245, .68);
+  background: transparent;
+  border: 1px solid rgba(245, 245, 245, .28);
+  font-size: .64rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  cursor: pointer;
+}
+
+#skip-intro:hover,
+#skip-intro:focus-visible {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+@media (max-width: 560px) {
+  #splash iframe {
+    width: min(74vw, 280px);
+    height: min(78vh, 400px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.intro-active {
+    overflow: auto;
+  }
+
+  #splash {
+    display: none;
+  }
+}
+

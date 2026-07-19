@@ -69,4 +69,40 @@ async function initializeSite() {
   setFooterYear();
 }
 
-document.addEventListener("DOMContentLoaded", initializeSite);
+document.addEventListener("DOMContentLoaded", () => {
+  initializeIntro();
+  initializeSite();
+});
+
+function initializeIntro() {
+  const splash = document.querySelector("#splash");
+  const skip = document.querySelector("#skip-intro");
+
+  if (!splash) {
+    document.body.classList.remove("intro-active");
+    return;
+  }
+
+  let dismissed = false;
+
+  const dismissIntro = () => {
+    if (dismissed) return;
+    dismissed = true;
+
+    splash.classList.add("hide");
+    document.body.classList.remove("intro-active");
+
+    window.setTimeout(() => {
+      splash.remove();
+    }, 900);
+  };
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    dismissIntro();
+    return;
+  }
+
+  skip?.addEventListener("click", dismissIntro);
+  window.setTimeout(dismissIntro, 3300);
+}
+
