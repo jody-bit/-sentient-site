@@ -6,7 +6,7 @@ async function loadComponent(selector, path) {
 
   try {
     const response = await fetch(path);
-    if (!response.ok) throw new Error(`Unable to load ${path}. HTTP status: ${response.status}`);
+    if (!response.ok) throw new Error(`Unable to load ${path}`);
     container.innerHTML = await response.text();
   } catch (error) {
     console.error(error);
@@ -20,9 +20,9 @@ function initializeNavigation() {
   if (!toggle || !navigation) return;
 
   toggle.addEventListener("click", () => {
-    const isOpen = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!isOpen));
-    toggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    toggle.setAttribute("aria-label", open ? "Open navigation" : "Close navigation");
     navigation.classList.toggle("open");
   });
 
@@ -44,11 +44,10 @@ function initializeNavigation() {
 }
 
 function markCurrentNavigationItem() {
-  const currentPath = window.location.pathname;
+  const path = window.location.pathname;
   document.querySelectorAll(".nav a").forEach((link) => {
-    const linkURL = new URL(link.href, window.location.origin);
-    const linkPath = linkURL.pathname;
-    if (linkPath !== "/" && currentPath.startsWith(linkPath)) {
+    const linkPath = new URL(link.href, window.location.origin).pathname;
+    if (linkPath !== "/" && path.startsWith(linkPath)) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }
