@@ -1,26 +1,32 @@
-SENTIENT PRODUCTIONS: NEW PAGES UPDATE
+SENTIENT ARTIST PROGRAM RESPONSIVE UPDATE
 
-FILES INCLUDED
-- components/header.html
-- components/footer.html
-- site.js
+FILES
 - artists/index.html
-- frameworks/index.html
-- workshops/index.html
-- pages.css
+- artist-responsive.css
 
 INSTALL
-1. Copy each HTML/JS file into the matching path in your sentient-site repository.
-2. Append the contents of pages.css to the bottom of your existing styles.css.
-3. Save all files.
-4. Run:
+1. Replace your current artists/index.html with the included file.
+2. Open artist-responsive.css.
+3. Paste the entire CSS block at the END of your existing styles.css.
+4. Save both files.
+5. Run:
    git add .
-   git commit -m "Add Sentient artist, frameworks, and workshop pages"
+   git commit -m "Redesign responsive Artist Program page"
    git push
-5. Wait for Vercel to show Ready.
-6. Hard-refresh sentientproductions.com.
+6. When Vercel shows Ready, hard-refresh:
+   - Mac: Command + Shift + R
+   - Windows: Ctrl + Shift + R
+
+BREAKPOINTS INCLUDED
+- Desktop
+- Small laptop / large tablet: 1100px
+- Tablet: 820px
+- Handset: 560px
+- Very small handset: 380px
+- Landscape handset: max-height 500px
 
 NOTES
-- Test on Vercel or through a local server, not by double-clicking HTML files.
-- The shared header now routes Workshops to /workshops/.
-- These files contain no references to the prior artist collaboration.
+- This update introduces a single .shell container system.
+- It fixes the accidental fourth empty card.
+- It removes the oversized email treatment from this page.
+- It changes the selection process into a responsive timeline.
