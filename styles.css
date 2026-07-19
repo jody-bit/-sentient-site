@@ -1649,13 +1649,11 @@ body.intro-active {
 }
 
 .home-hero h1 {
-  width: 100%;
-  max-width: 12ch;
-  margin: 0 auto clamp(1.25rem, 2.5vw, 2rem);
-  font-size: clamp(3rem, 7.4vw, 7.6rem);
-  line-height: 0.92;
-  overflow-wrap: normal;
-  word-break: normal;
+    width: min(100%, 900px);
+    margin: 0 auto 2rem;
+    font-size: clamp(3rem, 7.4vw, 7.6rem);
+    line-height: 0.92;
+    letter-spacing: -0.06em;
 }
 
 .home-hero-aside {
