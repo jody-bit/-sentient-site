@@ -2,64 +2,28 @@
 
 async function loadComponent(selector, path) {
   const container = document.querySelector(selector);
-
-  if (!container) {
-    return;
-  }
+  if (!container) return;
 
   try {
     const response = await fetch(path);
-
-    if (!response.ok) {
-      throw new Error(
-        `Unable to load ${path}. HTTP status: ${response.status}`
-      );
-    }
-
-    const componentHTML = await response.text();
-
-    container.innerHTML = componentHTML;
+    if (!response.ok) throw new Error(`Unable to load ${path}. HTTP status: ${response.status}`);
+    container.innerHTML = await response.text();
   } catch (error) {
     console.error(error);
-
-    /*
-      The page remains usable if the shared component fails.
-      Only the unavailable component receives this message.
-    */
-
-    container.innerHTML = `
-      <div class="component-error">
-        Site navigation is temporarily unavailable.
-      </div>
-    `;
+    container.innerHTML = '<div class="component-error">Site navigation is temporarily unavailable.</div>';
   }
 }
 
 function initializeNavigation() {
   const toggle = document.querySelector(".nav-toggle");
   const navigation = document.querySelector(".nav");
-
-  if (!toggle || !navigation) {
-    return;
-  }
+  if (!toggle || !navigation) return;
 
   toggle.addEventListener("click", () => {
-    const currentlyOpen =
-      toggle.getAttribute("aria-expanded") === "true";
-
-    toggle.setAttribute(
-      "aria-expanded",
-      String(!currentlyOpen)
-    );
-
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    toggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
     navigation.classList.toggle("open");
-
-    toggle.setAttribute(
-      "aria-label",
-      currentlyOpen
-        ? "Open navigation"
-        : "Close navigation"
-    );
   });
 
   navigation.querySelectorAll("a").forEach((link) => {
@@ -71,29 +35,20 @@ function initializeNavigation() {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") {
-      return;
+    if (event.key === "Escape") {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+      navigation.classList.remove("open");
     }
-
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Open navigation");
-    navigation.classList.remove("open");
   });
 }
 
 function markCurrentNavigationItem() {
   const currentPath = window.location.pathname;
-  const navigationLinks = document.querySelectorAll(".nav a");
-
-  navigationLinks.forEach((link) => {
+  document.querySelectorAll(".nav a").forEach((link) => {
     const linkURL = new URL(link.href, window.location.origin);
     const linkPath = linkURL.pathname;
-
-    const isCurrentSection =
-      linkPath !== "/" &&
-      currentPath.startsWith(linkPath);
-
-    if (isCurrentSection) {
+    if (linkPath !== "/" && currentPath.startsWith(linkPath)) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }
@@ -101,36 +56,18 @@ function markCurrentNavigationItem() {
 }
 
 function setFooterYear() {
-  const yearElement = document.querySelector("#footer-year");
-
-  if (!yearElement) {
-    return;
-  }
-
-  yearElement.textContent = String(
-    new Date().getFullYear()
-  );
+  const year = document.querySelector("#footer-year");
+  if (year) year.textContent = String(new Date().getFullYear());
 }
 
 async function initializeSite() {
   await Promise.all([
-    loadComponent(
-      "#site-header",
-      "/components/header.html"
-    ),
-
-    loadComponent(
-      "#site-footer",
-      "/components/footer.html"
-    )
+    loadComponent("#site-header", "/components/header.html"),
+    loadComponent("#site-footer", "/components/footer.html")
   ]);
-
   initializeNavigation();
   markCurrentNavigationItem();
   setFooterYear();
 }
 
-document.addEventListener(
-  "DOMContentLoaded",
-  initializeSite
-);
+document.addEventListener("DOMContentLoaded", initializeSite);
