@@ -1629,7 +1629,7 @@ body.intro-active {
   }
 }
 /* =========================================================
-   HOMEPAGE HERO: CENTERED COMPOSITION
+   HOMEPAGE HERO: CENTERED + RESPONSIVE
    ========================================================= */
 
 .home-hero-grid {
@@ -1637,7 +1637,7 @@ body.intro-active {
   justify-items: center;
   align-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
   min-height: clamp(31rem, 62vh, 43rem);
   text-align: center;
 }
@@ -1645,37 +1645,48 @@ body.intro-active {
 .home-hero-grid > div:first-child {
   display: grid;
   justify-items: center;
-  width: 100%;
+  width: min(100%, 75rem);
 }
 
 .home-hero h1 {
+  width: 100%;
   max-width: 12ch;
-  margin: 0 auto 2rem;
+  margin: 0 auto clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(3rem, 7.4vw, 7.6rem);
+  line-height: 0.92;
+  overflow-wrap: normal;
+  word-break: normal;
 }
 
 .home-hero-aside {
   width: min(100%, 46rem);
-  max-width: 46rem;
+  max-width: none;
   margin-inline: auto;
 }
 
 .home-hero-aside p {
+  width: 100%;
+  max-width: 46rem;
   margin-inline: auto;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
 }
 
 .home-actions {
   justify-content: center;
+  width: 100%;
 }
 
 @media (max-width: 850px) {
   .home-hero-grid {
+    min-height: auto;
     gap: 2rem;
-    text-align: center;
+    padding-top: clamp(4rem, 10vw, 6rem);
+    padding-bottom: clamp(4rem, 10vw, 6rem);
   }
 
   .home-hero h1 {
     max-width: 11ch;
-    margin-inline: auto;
+    font-size: clamp(3.4rem, 11vw, 6rem);
   }
 
   .home-hero-aside {
@@ -1686,13 +1697,32 @@ body.intro-active {
 @media (max-width: 560px) {
   .home-hero-grid {
     gap: 1.75rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
   }
 
   .home-hero h1 {
-    max-width: none;
+    max-width: 100%;
+    font-size: clamp(2.75rem, 13vw, 4.4rem);
+    line-height: 0.96;
+  }
+
+  .home-hero-aside p {
+    font-size: 1rem;
+    line-height: 1.65;
   }
 
   .home-actions {
+    flex-direction: column;
+  }
+
+  .home-actions .button {
     width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-hero h1 {
+    font-size: clamp(2.45rem, 12.5vw, 3.25rem);
   }
 }
