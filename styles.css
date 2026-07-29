@@ -2148,8 +2148,6 @@ body.intro-active {
 .wordmark-grid-employers .wordmark-card img{max-height:72px}
 .wordmark-card:hover img,.wordmark-card:focus-within img{opacity:1;transform:translateY(-2px)}
 .wordmark-card figcaption{align-self:end;margin-top:1.15rem;color:rgba(245,245,245,.42);font-size:.62rem;font-weight:500;line-height:1.35;text-align:center;text-transform:uppercase;letter-spacing:.14em}
-.wordmark-ford img{max-height:58px}.wordmark-disney img{max-height:72px}.wordmark-att img{max-height:68px}.wordmark-fox-studios img{max-height:78px}.wordmark-publicis img{max-height:68px}.wordmark-jaunt img{max-height:74px}.wordmark-wevr img{max-height:54px}
-.wordmark-discovery img{max-width:min(88%,250px);max-height:48px}.wordmark-fox-broadcasting img{max-height:46px}.wordmark-dreamworks img{max-width:min(90%,255px);max-height:48px}.wordmark-google img{max-height:54px}.wordmark-microsoft img{max-height:66px}.wordmark-meta img{max-width:min(88%,245px);max-height:48px}.wordmark-htc-vive img{max-height:64px}.wordmark-playstation img{max-height:70px}.wordmark-steam img{max-width:min(86%,230px);max-height:54px}.wordmark-starz-encore img{max-width:min(92%,260px);max-height:42px}.wordmark-lexus img{max-height:68px}
 @media(max-width:1050px){.wordmark-grid,.wordmark-grid-employers{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:760px){.wordmark-grid,.wordmark-grid-employers{grid-template-columns:repeat(2,minmax(0,1fr))}.wordmark-card,.wordmark-grid-employers .wordmark-card{min-height:138px;padding:1.3rem 1rem .85rem}.wordmark-card img,.wordmark-grid-employers .wordmark-card img{max-width:82%;max-height:56px}.wordmark-card figcaption{font-size:.56rem}}
 @media(max-width:430px){.wordmark-card,.wordmark-grid-employers .wordmark-card{min-height:124px}}
