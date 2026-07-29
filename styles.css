@@ -2057,3 +2057,79 @@ body.intro-active {
     min-height: 105px;
   }
 }
+
+
+/* About page proof points */
+.proof-section {
+  background: #080808;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.proof-card {
+  min-height: 300px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.proof-card-wide {
+  grid-column: span 3;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: .7fr 1.35fr 1fr;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+
+.proof-kicker {
+  margin-bottom: 2.8rem;
+  color: var(--red);
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .17em;
+}
+
+.proof-card h3 {
+  margin: 0 0 1.2rem;
+  color: var(--white);
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+
+.proof-card p {
+  color: var(--soft);
+  line-height: 1.75;
+}
+
+@media (max-width: 1000px) {
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .proof-card-wide {
+    grid-column: span 2;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .proof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proof-card-wide {
+    grid-column: span 1;
+  }
+
+  .proof-card {
+    min-height: auto;
+  }
+}
