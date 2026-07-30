@@ -77,10 +77,18 @@ document.addEventListener("DOMContentLoaded", () => {
 function initializeIntro() {
   const splash = document.querySelector("#splash");
   const skip = document.querySelector("#skip-intro");
+  const INTRO_SEEN_KEY = "sentient-intro-seen";
 
   if (!splash) {
     document.body.classList.remove("intro-active");
     return;
+  }
+
+  let seenThisSession = false;
+  try {
+    seenThisSession = window.sessionStorage.getItem(INTRO_SEEN_KEY) === "1";
+  } catch (error) {
+    seenThisSession = false;
   }
 
   let dismissed = false;
@@ -92,13 +100,21 @@ function initializeIntro() {
     splash.classList.add("hide");
     document.body.classList.remove("intro-active");
 
+    try {
+      window.sessionStorage.setItem(INTRO_SEEN_KEY, "1");
+    } catch (error) {
+      /* sessionStorage unavailable; intro will simply replay */
+    }
+
     window.setTimeout(() => {
       splash.remove();
     }, 900);
   };
 
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    dismissIntro();
+  if (seenThisSession || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    splash.classList.add("hide");
+    document.body.classList.remove("intro-active");
+    splash.remove();
     return;
   }
 

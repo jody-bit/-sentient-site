@@ -104,6 +104,26 @@ main {
   z-index: 100;
 }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 200;
+  padding: 0.9rem 1.4rem;
+  color: var(--black);
+  background: var(--white);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: top 150ms ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -248,19 +268,21 @@ main {
 h1 {
   max-width: 1120px;
   margin-bottom: 2rem;
-  font-size: clamp(3rem, 6.6vw, 6rem);
-  font-weight: 300;
-  line-height: 0.96;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.1rem, 5vw, 4.4rem);
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 h2 {
   max-width: 760px;
   margin-bottom: 1.5rem;
-  font-size: clamp(2rem, 5vw, 4.5rem);
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  font-size: clamp(1.6rem, 3.8vw, 3.4rem);
+  font-weight: 200;
+  line-height: 1.25;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 /* HOMEPAGE / GENERIC SECTIONS */
@@ -1752,36 +1774,22 @@ body.intro-active {
 }
 
 .about-portrait-placeholder {
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: clamp(28rem, 52vw, 44rem);
   padding: clamp(1.5rem, 3vw, 2.5rem);
-  overflow: hidden;
-  background:
-    radial-gradient(circle at 75% 20%, rgba(255, 59, 59, .17), transparent 34%),
-    linear-gradient(145deg, #151515, #080808 55%, #050505);
+  background: var(--black-soft);
   border: 1px solid var(--line);
 }
 
-.about-portrait-placeholder::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(transparent 55%, rgba(0, 0, 0, .68));
-  content: "";
-  pointer-events: none;
-}
-
 .about-portrait-placeholder img {
-  width: min(72%, 310px);
+  width: min(34%, 140px);
   margin: auto;
-  opacity: .36;
+  opacity: 1;
 }
 
 .about-portrait-placeholder > div {
-  position: relative;
-  z-index: 1;
   display: grid;
   gap: .45rem;
 }
@@ -1791,7 +1799,9 @@ body.intro-active {
   font-weight: 400;
 }
 
-.about-portrait-placeholder small {
+.about-portrait-placeholder small,
+.portrait-pending {
+  margin: 0;
   color: var(--muted);
   font-size: .68rem;
   text-transform: uppercase;
@@ -1799,8 +1809,14 @@ body.intro-active {
 }
 
 .about-statement {
+  border-bottom: 1px solid var(--line);
+}
+
+.about-statement-rule {
+  width: min(100%, 8rem);
+  height: 1px;
+  margin-bottom: 1.5rem;
   background: var(--red);
-  color: var(--black);
 }
 
 .about-statement-grid {
@@ -1814,15 +1830,12 @@ body.intro-active {
 
 .about-statement .eyebrow {
   margin-bottom: 0;
-  color: rgba(5, 5, 5, .7);
-  font-size: .72rem;
-  line-height: 1.4;
-  letter-spacing: .22em;
 }
 
 .about-statement p {
   max-width: 1080px;
   margin: 0;
+  color: var(--white);
   font-size: clamp(1.7rem, 3.4vw, 3.4rem);
   line-height: 1.12;
   letter-spacing: -.035em;
