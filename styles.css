@@ -2218,6 +2218,12 @@ body.intro-active {
 
 .about-statement .eyebrow {
   margin-bottom: 0;
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
 .about-statement p {
