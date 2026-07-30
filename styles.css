@@ -1777,6 +1777,17 @@ hr {
   letter-spacing: 0.18em;
 }
 
+.total-score {
+  margin: 0 0 1.5rem;
+  color: var(--white);
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.total-score span {
+  color: var(--red);
+}
+
 .score-bands {
   margin-top: 1.5rem;
   border-top: 1px solid var(--line);
@@ -1785,6 +1796,7 @@ hr {
 .score-band {
   padding: 1.5rem 0;
   border-bottom: 1px solid var(--line);
+  transition: opacity 200ms ease;
 }
 
 .score-range {
@@ -1809,6 +1821,22 @@ hr {
   color: var(--soft);
   font-size: 0.95rem;
   line-height: 1.6;
+}
+
+.score-bands.has-result .score-band {
+  opacity: 0.45;
+}
+
+.score-bands.has-result .score-band.active {
+  opacity: 1;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  background: var(--black-soft);
+  border-bottom-color: var(--red);
+}
+
+.score-bands.has-result .score-band.active p {
+  color: var(--white);
 }
 
 @media (max-width: 480px) {

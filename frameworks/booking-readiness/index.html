@@ -97,14 +97,14 @@
           <div class="framework-number">Section 1</div>
           <h2>Identity</h2>
           <p><em>Can someone understand who you are within 30 seconds?</em></p>
-          <ul class="checklist">
+          <ul class="checklist" data-section="1">
             <li><label><input type="checkbox" /> I can describe what I create in one clear sentence.</label></li>
             <li><label><input type="checkbox" /> My biography explains both what I create and why I create it.</label></li>
             <li><label><input type="checkbox" /> My music, visuals, and content present a consistent artistic identity.</label></li>
             <li><label><input type="checkbox" /> My website or profile clearly describes what audiences can expect from my live performance.</label></li>
             <li><label><input type="checkbox" /> My artist name, biography, and visual identity are consistent across every platform.</label></li>
           </ul>
-          <p class="score-hint">Score: 0&ndash;5</p>
+          <p class="score-hint">Your score: <span class="section-score">0</span> / 5</p>
         </div>
       </section>
 
@@ -113,14 +113,14 @@
           <div class="framework-number">Section 2</div>
           <h2>Digital Presence</h2>
           <p><em>Can someone quickly find the information they need?</em></p>
-          <ul class="checklist">
+          <ul class="checklist" data-section="2">
             <li><label><input type="checkbox" /> I have a professional online home (website, Linktree, or equivalent).</label></li>
             <li><label><input type="checkbox" /> My latest music is easy to find and listen to.</label></li>
             <li><label><input type="checkbox" /> My booking contact information is clearly displayed.</label></li>
             <li><label><input type="checkbox" /> My biography, photos, and links are current.</label></li>
             <li><label><input type="checkbox" /> Someone can discover my work and take the next step without searching multiple websites.</label></li>
           </ul>
-          <p class="score-hint">Score: 0&ndash;5</p>
+          <p class="score-hint">Your score: <span class="section-score">0</span> / 5</p>
         </div>
       </section>
 
@@ -129,14 +129,14 @@
           <div class="framework-number">Section 3</div>
           <h2>Booking Readiness</h2>
           <p><em>Do you have the materials a promoter needs to make a confident decision, promote and produce their event?</em></p>
-          <ul class="checklist">
+          <ul class="checklist" data-section="3">
             <li><label><input type="checkbox" /> Professional press photos are available.</label></li>
             <li><label><input type="checkbox" /> Recent live performance footage is available.</label></li>
             <li><label><input type="checkbox" /> A current artist biography is available.</label></li>
             <li><label><input type="checkbox" /> Technical information (stage plot, input list, rider, etc.) is available when needed.</label></li>
             <li><label><input type="checkbox" /> A promoter can evaluate my work without contacting me for basic information.</label></li>
           </ul>
-          <p class="score-hint">Score: 0&ndash;5</p>
+          <p class="score-hint">Your score: <span class="section-score">0</span> / 5</p>
         </div>
       </section>
 
@@ -145,22 +145,23 @@
           <div class="framework-number">Section 4</div>
           <h2>Professionalism</h2>
           <p><em>Do you make it easy to work with you?</em></p>
-          <ul class="checklist">
+          <ul class="checklist" data-section="4">
             <li><label><input type="checkbox" /> I respond to booking inquiries within a reasonable timeframe.</label></li>
             <li><label><input type="checkbox" /> I use a professional email address for bookings.</label></li>
             <li><label><input type="checkbox" /> My files, photos, and promotional materials are organized and up to date.</label></li>
             <li><label><input type="checkbox" /> My artist name is presented consistently across all platforms.</label></li>
             <li><label><input type="checkbox" /> My booking process is simple and straightforward.</label></li>
           </ul>
-          <p class="score-hint">Score: 0&ndash;5</p>
+          <p class="score-hint">Your score: <span class="section-score">0</span> / 5</p>
         </div>
       </section>
 
       <section class="framework-copy">
         <div class="shell shell-narrow">
           <h2>Your Score</h2>
-          <div class="score-bands">
-            <div class="score-band">
+          <p class="total-score">Your total score: <span id="total-score">0</span> / 20</p>
+          <div class="score-bands" id="score-bands">
+            <div class="score-band" data-min="17" data-max="20">
               <span class="score-range">17&ndash;20 &middot; Booking Ready</span>
               <p>
                 You have a strong foundation that allows promoters to make decisions with
@@ -168,7 +169,7 @@
                 and keeping your materials current.
               </p>
             </div>
-            <div class="score-band">
+            <div class="score-band" data-min="13" data-max="16">
               <span class="score-range">13&ndash;16 &middot; Almost There</span>
               <p>
                 Your work shows promise, but uncertainty still creates friction. Focus on
@@ -176,7 +177,7 @@
                 and evaluate your work.
               </p>
             </div>
-            <div class="score-band">
+            <div class="score-band" data-min="8" data-max="12">
               <span class="score-range">8&ndash;12 &middot; Needs Work</span>
               <p>
                 Promoters are likely filling in gaps with assumptions or moving on before
@@ -184,7 +185,7 @@
                 your foundation before expanding your outreach.
               </p>
             </div>
-            <div class="score-band">
+            <div class="score-band" data-min="0" data-max="7">
               <span class="score-range">0&ndash;7 &middot; Build Your Foundation</span>
               <p>
                 Promotion won't solve the issues identified here. Invest time in
@@ -266,5 +267,50 @@
     <div id="site-footer"></div>
   </div>
   <script src="/site.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var checklists = document.querySelectorAll(".checklist[data-section]");
+      var scoreBands = document.querySelectorAll(".score-band[data-min]");
+      var totalScoreEl = document.getElementById("total-score");
+      var scoreBandsWrap = document.getElementById("score-bands");
+
+      function updateScores() {
+        var total = 0;
+
+        checklists.forEach(function (list) {
+          var checked = list.querySelectorAll('input[type="checkbox"]:checked').length;
+          total += checked;
+
+          var scoreEl = list.parentElement.querySelector(".section-score");
+          if (scoreEl) {
+            scoreEl.textContent = String(checked);
+          }
+        });
+
+        if (totalScoreEl) {
+          totalScoreEl.textContent = String(total);
+        }
+
+        scoreBands.forEach(function (band) {
+          var min = parseInt(band.getAttribute("data-min"), 10);
+          var max = parseInt(band.getAttribute("data-max"), 10);
+          var isMatch = total >= min && total <= max;
+          band.classList.toggle("active", isMatch);
+        });
+
+        if (scoreBandsWrap) {
+          scoreBandsWrap.classList.toggle("has-result", total > 0);
+        }
+      }
+
+      document.querySelectorAll('.checklist input[type="checkbox"]').forEach(function (box) {
+        box.addEventListener("change", updateScores);
+      });
+
+      updateScores();
+    })();
+  </script>
 </body>
 </html>
