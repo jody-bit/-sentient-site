@@ -1677,6 +1677,61 @@ hr {
   color: var(--muted);
 }
 
+.next-framework .lined-list li a {
+  color: var(--red);
+  text-decoration: none;
+}
+
+.next-framework .lined-list li a:hover {
+  text-decoration: underline;
+}
+
+.field-notes {
+  padding: clamp(2.5rem, 5vw, 4rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.field-notes .label {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.field-notes ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.field-notes li {
+  position: relative;
+  padding: 1rem 0 1rem 1.5rem;
+  color: var(--soft);
+  border-bottom: 1px solid var(--line);
+  font-size: clamp(1rem, 1.1vw, 1.12rem);
+  line-height: 1.5;
+}
+
+.field-notes li::before {
+  position: absolute;
+  top: 1.55rem;
+  left: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  background: var(--red);
+  content: "";
+}
+
+.framework-copy strong {
+  color: var(--white);
+  font-weight: 500;
+}
+
 @media (max-width: 480px) {
   .summary-grid {
     grid-template-columns: 1fr;
