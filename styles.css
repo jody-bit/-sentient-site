@@ -268,21 +268,19 @@ main {
 h1 {
   max-width: 1120px;
   margin-bottom: 2rem;
-  font-size: clamp(2.1rem, 5vw, 4.4rem);
-  font-weight: 200;
-  line-height: 1.2;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: clamp(3rem, 6.6vw, 6rem);
+  font-weight: 300;
+  line-height: 0.96;
+  letter-spacing: -0.055em;
 }
 
 h2 {
   max-width: 760px;
   margin-bottom: 1.5rem;
-  font-size: clamp(1.6rem, 3.8vw, 3.4rem);
-  font-weight: 200;
-  line-height: 1.25;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.04em;
 }
 
 /* HOMEPAGE / GENERIC SECTIONS */
@@ -537,6 +535,10 @@ h2 {
   padding-bottom: clamp(4rem, 6vw, 6rem);
 }
 
+.artist-hero-grid > * {
+  min-width: 0;
+}
+
 .artist-hero-copy h1 {
   max-width: 11ch;
   margin: 0;
@@ -719,6 +721,10 @@ h2 {
   align-items: start;
 }
 
+.standard-grid > * {
+  min-width: 0;
+}
+
 .standard-list {
   margin: 0;
   padding: 0;
@@ -797,6 +803,10 @@ h2 {
   min-height: clamp(26rem, 48vh, 35rem);
   padding-top: var(--section-space);
   padding-bottom: var(--section-space);
+}
+
+.artist-cta-grid > * {
+  min-width: 0;
 }
 
 .artist-cta h2 {
@@ -1274,6 +1284,11 @@ button:focus-visible {
   min-height: clamp(31rem, 62vh, 43rem);
   padding-top: clamp(4rem, 7vw, 7rem);
   padding-bottom: clamp(4rem, 6vw, 6rem);
+}
+
+.home-hero-grid > *,
+.interior-hero-grid > * {
+  min-width: 0;
 }
 
 .home-hero h1,
