@@ -888,6 +888,20 @@ h2 {
   line-height: 1.5;
 }
 
+/* UTILITY */
+
+.copy-block {
+  max-width: 42rem;
+}
+
+.hero-title-wide {
+  max-width: none;
+}
+
+.fit-panel .button {
+  margin-top: 1.75rem;
+}
+
 /* FOOTER */
 
 #site-footer {
