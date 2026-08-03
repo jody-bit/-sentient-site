@@ -829,6 +829,65 @@ h2 {
   text-underline-offset: 0.3em;
 }
 
+/* GRAPHIC PANELS (Artist Systems infographics) */
+
+.graphic-panel {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--black-soft);
+}
+
+.graphic-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.graphic-panel-narrow {
+  max-width: 26rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* TESTING LIST (icon pack) */
+
+.testing-list {
+  margin: clamp(1.5rem, 3vw, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.testing-list li {
+  display: grid;
+  grid-template-columns: 3.25rem 2.25rem 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.testing-index {
+  color: var(--red);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+}
+
+.testing-icon {
+  display: block;
+  width: 1.65rem;
+  height: 1.65rem;
+}
+
+.testing-list p {
+  margin: 0;
+  color: var(--soft);
+  font-size: clamp(1rem, 1.1vw, 1.12rem);
+  line-height: 1.5;
+}
+
 /* FOOTER */
 
 #site-footer {
@@ -1186,6 +1245,10 @@ button:focus-visible {
 
   .standard-list li {
     grid-template-columns: 2.6rem 1fr;
+  }
+
+  .testing-list li {
+    grid-template-columns: 2.6rem 2rem 1fr;
   }
 
   .process-grid {
