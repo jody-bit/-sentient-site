@@ -2196,6 +2196,85 @@ body.intro-active {
   letter-spacing: .18em;
 }
 
+/* Editorial photography */
+.about-photo {
+  margin: 0;
+}
+
+.about-hero-photo {
+  min-height: clamp(28rem, 52vw, 44rem);
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--black-soft);
+}
+
+.about-hero-photo picture,
+.about-hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-hero-photo figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  color: var(--white);
+  background: linear-gradient(to top, rgba(5, 5, 5, .82), transparent);
+  font-size: .85rem;
+  line-height: 1.55;
+}
+
+.about-hero-photo {
+  position: relative;
+}
+
+.about-photo-band {
+  border-bottom: 1px solid var(--line);
+}
+
+.about-photo-band .shell {
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.about-photo-band figure {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.about-photo-band img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+}
+
+.about-photo-band figcaption {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.about-photo-band .photo-title {
+  display: block;
+  margin-bottom: .4rem;
+  color: var(--red);
+  font-size: .7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+.about-photo-band .photo-caption {
+  color: var(--soft);
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
 .about-statement {
   border-bottom: 1px solid var(--line);
 }
@@ -2331,6 +2410,23 @@ body.intro-active {
   margin-bottom: 2rem;
   color: var(--soft);
   line-height: 1.7;
+}
+
+.era-heading {
+  margin: 2.5rem 0 0;
+  color: var(--red);
+  font-size: .72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+}
+
+.era-heading:first-of-type {
+  margin-top: 0;
+}
+
+.era-heading + .wordmark-grid {
+  margin-top: 1.25rem;
 }
 
 .wordmark-grid {
