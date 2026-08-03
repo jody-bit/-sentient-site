@@ -902,6 +902,33 @@ h2 {
   margin-top: 1.75rem;
 }
 
+.fit-panel .text-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
+.signal-statement-support {
+  max-width: 42rem;
+  margin-top: 1.75rem;
+  color: var(--soft);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.panel-meta {
+  margin: -0.75rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.section-link-spaced {
+  display: inline-block;
+  margin-top: 2rem;
+}
+
 /* FOOTER */
 
 #site-footer {
