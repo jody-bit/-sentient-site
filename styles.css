@@ -1962,6 +1962,12 @@ hr {
   border-bottom: 1px solid var(--line);
 }
 
+.home-cta > .shell,
+.interior-cta > .shell {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
 .home-cta-grid,
 .interior-cta-grid {
   align-items: end;
