@@ -1,0 +1,15 @@
+/* =====================================================================
+   DETROIT TROUBLE — PDF VERSION (one continuous page)
+   Loaded only by pdf.html, on top of styles.css.
+   ===================================================================== */
+/* The page size (1440px wide x the full content height) is set by the export step, not here. */
+
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body.pdf { width: 1440px; margin: 0 auto; }
+.pdf .page { max-width: none; }
+.pdf .section, .pdf .hero, .pdf .cta-bar, .pdf .footer { break-inside: avoid; }
+.pdf .hero { height: 569px; overflow: hidden; }
+.pdf .btn { max-width: none !important; white-space: nowrap; }
+
+/* Website link in the closing footer */
+.pdf .footer__site { margin-left: auto; margin-right: 2rem; color: var(--cream); font: 500 .75rem/1 var(--font-mono); letter-spacing: .14em; text-transform: uppercase; text-decoration: underline; text-decoration-color: var(--red); text-underline-offset: .4em; }

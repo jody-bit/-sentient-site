@@ -3507,3 +3507,361 @@ body.intro-active {
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   DETROIT TROUBLE CASE STUDY  (all classes prefixed dt-)
+   ========================================================================== */
+
+.dt-page { --dt-black: #111111; --dt-cream: #f2ebdd; --dt-steel: #777875; --dt-oxide: #a63c2e; }
+
+.dt-hero { border-bottom: 1px solid var(--line); }
+
+.dt-hero-text {
+  padding-top: clamp(6rem, 11vw, 9.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.dt-kicker {
+  display: block;
+  margin-bottom: 1.25rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.dt-hero h1 {
+  max-width: 14ch;
+  margin: 0 0 1.5rem;
+  color: var(--white);
+  font-size: clamp(3rem, 9vw, 8rem);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.dt-hero h1 span {
+  display: block;
+  margin-top: 0.35em;
+  max-width: 28ch;
+  color: var(--soft);
+  font-size: 0.34em;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.dt-subhead {
+  max-width: 40rem;
+  margin: 0 0 2.5rem;
+  color: var(--soft);
+  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  line-height: 1.5;
+}
+
+.dt-meta {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  margin: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+
+.dt-meta dt {
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.dt-meta dd {
+  margin: 0;
+  color: var(--white);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.dt-hero-art {
+  background: var(--dt-black);
+  border-top: 1px solid var(--line);
+}
+
+.dt-hero-art img { display: block; width: 100%; height: auto; }
+
+/* SECTIONS */
+
+.dt-section { border-bottom: 1px solid var(--line); }
+
+.dt-section > .shell {
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+}
+
+.dt-split {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.dt-num {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--red);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
+.dt-section h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.dt-body p {
+  max-width: 40rem;
+  margin: 0 0 1.25rem;
+  color: var(--soft);
+  font-size: clamp(1rem, 1.15vw, 1.12rem);
+  line-height: 1.7;
+}
+
+.dt-body p:last-child { margin-bottom: 0; }
+.dt-body strong { color: var(--white); font-weight: 500; }
+
+.dt-body a, .dt-links a {
+  color: var(--white);
+  text-decoration-color: var(--red);
+  text-underline-offset: 0.2em;
+}
+
+.dt-body a:hover, .dt-links a:hover { color: var(--red); }
+
+.dt-lead {
+  max-width: 44rem !important;
+  color: var(--white) !important;
+  font-size: clamp(1.25rem, 2vw, 1.7rem) !important;
+  line-height: 1.4 !important;
+  letter-spacing: -0.01em;
+}
+
+/* ARTIFACT FRAMES: the client's work shown as the evidence it is */
+
+.dt-artifact {
+  margin: clamp(2rem, 4vw, 3.5rem) 0 0;
+  background: var(--dt-black);
+  border: 1px solid var(--line-strong);
+}
+
+.dt-artifact img { display: block; width: 100%; height: auto; }
+
+.dt-artifact figcaption {
+  padding: 0.85rem 1rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dt-full { margin-top: 0; }
+
+.dt-scroll {
+  max-height: min(80vh, 46rem);
+  overflow-y: auto;
+  background: var(--dt-black);
+  border: 1px solid var(--line-strong);
+}
+
+.dt-scroll:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+.dt-scroll img { display: block; width: 100%; height: auto; }
+
+.dt-tag {
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding: 0.35rem 0.7rem;
+  color: var(--black);
+  background: var(--red);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.dt-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; margin-top: 1.75rem; }
+
+/* BUYER QUESTIONS (typography, not cards) */
+
+.dt-questions {
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: dtq;
+  border-top: 1px solid var(--line);
+}
+
+.dt-questions li {
+  display: grid;
+  grid-template-columns: 3.2rem 1fr;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--white);
+  font-size: clamp(1.25rem, 2.6vw, 2.1rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  counter-increment: dtq;
+}
+
+.dt-questions li::before {
+  content: counter(dtq, decimal-leading-zero);
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+}
+
+/* STATEMENTS */
+
+.dt-statement { border-bottom: 1px solid var(--line); }
+
+.dt-statement > .shell {
+  padding-top: clamp(4rem, 9vw, 8rem);
+  padding-bottom: clamp(4rem, 9vw, 8rem);
+}
+
+.dt-statement blockquote {
+  max-width: 22ch;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(2rem, 6vw, 5.2rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.dt-statement blockquote em { color: var(--soft); font-style: normal; }
+
+.dt-statement.is-small blockquote { max-width: 30ch; font-size: clamp(1.6rem, 3.6vw, 3rem); }
+
+/* RAW MATERIAL -> FINISHED */
+
+.dt-material {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  align-items: stretch;
+}
+
+.dt-material-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+
+.dt-material-list li {
+  padding: 0.85rem 0;
+  color: var(--soft);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+
+.dt-material-list li span {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--white);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.dt-material .dt-artifact { margin-top: 0; }
+
+/* DESIGN SYSTEM */
+
+.dt-palette {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(2rem, 4vw, 3rem);
+  border: 1px solid var(--line-strong);
+}
+
+.dt-swatch { min-height: 9rem; padding: 1rem; display: flex; flex-direction: column; justify-content: flex-end; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; }
+.dt-swatch b { display: block; font-weight: 600; }
+.dt-swatch.furnace { background: #111111; color: #f2ebdd; border-right: 1px solid var(--line); }
+.dt-swatch.cream { background: #f2ebdd; color: #111111; }
+.dt-swatch.steel { background: #777875; color: #111111; }
+.dt-swatch.oxide { background: #a63c2e; color: #f2ebdd; }
+
+.dt-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin-top: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.dt-pair .dt-artifact { margin-top: 0; }
+
+.dt-lineup { margin: 1.5rem 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); max-width: 40rem; }
+.dt-lineup li { display: flex; justify-content: space-between; gap: 1rem; padding: 0.8rem 0; border-bottom: 1px solid var(--line); color: var(--white); font-size: 1rem; }
+.dt-lineup li span { color: var(--muted); font-size: 0.85rem; }
+
+/* LINKS / DETAILS */
+
+.dt-links { margin: 1.75rem 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; }
+.dt-links li { font-size: 0.9rem; }
+
+.dt-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: clamp(2rem, 4vw, 3rem); background: var(--line); border: 1px solid var(--line); }
+.dt-three .dt-artifact { margin: 0; border: 0; }
+
+/* SCOPES */
+
+.dt-scopes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: clamp(2rem, 4vw, 3rem); border-top: 1px solid var(--line-strong); border-left: 1px solid var(--line-strong); }
+.dt-scopes > div { padding: clamp(1.25rem, 3vw, 2rem); border-right: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
+.dt-scope-label { display: block; margin-bottom: 1rem; color: var(--white); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+.dt-scopes p { margin: 0; color: var(--soft); font-size: 1rem; line-height: 1.65; }
+
+/* FINAL */
+
+.dt-final { border-bottom: 1px solid var(--line); }
+.dt-final > .shell { padding-top: var(--section-space); padding-bottom: var(--section-space); }
+
+.dt-final-grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(2rem, 5vw, 5rem); align-items: start; }
+
+.dt-label-box { padding: 1.5rem; border: 1px solid var(--line-strong); }
+.dt-label-box p { margin: 0 0 1rem; color: var(--soft); font-size: 0.9rem; line-height: 1.6; }
+.dt-label-box p:last-child { margin-bottom: 0; }
+.dt-label-box .dt-tag { margin-bottom: 1.25rem; }
+.dt-label-box.secondary { margin-top: 1.5rem; border-style: dashed; }
+
+.dt-disclosure { margin-top: 1rem; color: var(--muted); font-size: 0.82rem; line-height: 1.6; }
+
+.dt-closing-line { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 2rem; }
+
+.dt-page a:focus-visible, .dt-page .button:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
+
+@media (max-width: 1000px) {
+  .dt-split, .dt-final-grid, .dt-pair, .dt-material { grid-template-columns: 1fr; }
+  .dt-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dt-three { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .dt-palette { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .dt-questions li { grid-template-columns: 2.4rem 1fr; }
+  .dt-scopes { grid-template-columns: 1fr; }
+  .dt-lineup li { flex-direction: column; gap: 0.15rem; }
+  .dt-hero h1 { max-width: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dt-page * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
